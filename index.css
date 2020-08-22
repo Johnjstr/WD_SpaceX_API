@@ -1,0 +1,53 @@
+body {
+    background-color: lightgray;
+    
+}
+
+.galaxy {
+    background: url('nasa-rTZW4f02zY8-unsplash.jpg');
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    color: #392F5A;
+}
+
+#search {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+#submit {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: powderblue;
+    font-size: 20px;
+    transition-duration: 0s;
+    border: 2px solid black;
+    border-radius: 12px;
+    width: 15%;
+}
+
+#submit:hover {
+    background-color: lightgoldenrodyellow;
+}
+
+img {
+    border-radius: 10px;
+    border: 2px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
