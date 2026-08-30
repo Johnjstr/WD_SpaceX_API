@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #07080c;
+  --color-surface: #101218;
+  --color-elevated: #171a22;
+  --color-fg: #e8eaee;
+  --color-muted: #8b919c;
+  --color-subtle: #5c6370;
+  --color-accent: #c5cdd8;
+  --color-accent-fg: #07080c;
+  --color-border: #22262f;
+  --color-go: #7fa892;
+  --color-hold: #c4a07a;
+  --color-fail: #c48484;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --radius-control: 0.5rem;
+  --radius-card: 1.5rem;
+  --radius-shell: 1.75rem;
+  --text-display: clamp(3rem, 2.2rem + 6vw, 7.5rem);
+  --text-title: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+}
+
+@layer base {
+  :root {
+    --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.08);
+    --shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.14);
+    --motion-stagger: 40ms;
+    --motion-quick: 150ms;
+    --motion-fast: 250ms;
+    --motion-slow: 400ms;
+    --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img.hero-photo {
+    outline: none;
+  }
+
+  .hero-wash {
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-bg) 55%, transparent) 0%,
+      color-mix(in oklab, var(--color-bg) 72%, transparent) 42%,
+      var(--color-bg) 100%
+    );
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 35%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes hawthorne-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reveal {
+  animation: hawthorne-in var(--motion-slow) var(--ease-smooth-out) both;
+}
+
+.reveal-2 {
+  animation-delay: 80ms;
+}
+.reveal-3 {
+  animation-delay: 140ms;
+}
+.reveal-4 {
+  animation-delay: 200ms;
+}
